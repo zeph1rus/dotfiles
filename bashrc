@@ -1,4 +1,7 @@
 #!/bin/bash
+if [ -f ~/.bashrc.df ]; then
+	source ~/.bashrc.df
+fi
 
 set_prompt()
 {
