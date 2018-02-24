@@ -3,6 +3,13 @@ if [ -f ~/.bashrc.df ]; then
 	source ~/.bashrc.df
 fi
 
+case "$(uname -s)" in
+	Darwin)
+	source /usr/local/etc/bash_completion.d/git-prompt.sh
+	;;
+
+esac
+
 set_prompt()
 {
    local last_cmd=$?
