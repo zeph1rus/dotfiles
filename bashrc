@@ -1,13 +1,19 @@
 #!/bin/bash
 if [ -f ~/.bashrc.df ]; then
-	source ~/.bashrc.df
+	if [ -L ~/.bashrc.df ]; then
+		#do nothing
+	else
+		#this stops the script getting into an infinite loop
+		#where bashrc and bashrc.df are symlinks to the same file
+		source ~/.bashrc.df
+	fi
 fi
 
 case "$(uname -s)" in
 	Darwin)
-	source /usr/local/etc/bash_completion.d/git-prompt.sh
-	;;
-
+		#this fixes git completion and status on OSX
+		source /usr/local/etc/bash_completion.d/git-prompt.sh
+		;;
 esac
 
 set_prompt()
