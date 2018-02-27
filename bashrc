@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ -f ~/.bashrc.df ]; then
 	if [ -L ~/.bashrc.df ]; then
-		#do nothing
+		rm ~/.bashrc.df		#do nothing
 	else
 		#this stops the script getting into an infinite loop
 		#where bashrc and bashrc.df are symlinks to the same file
