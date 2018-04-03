@@ -32,7 +32,11 @@ Plugin 'baines/vim-colorscheme-thaumaturge'
 call vundle#end()            " required
 let  g:SimpylFold_docstring_preview=1
 
-set term=screen-256color
+
+" " this term setting doesn't work in gvim
+if !has("gui_running")
+	set term=screen-256color
+endif
 
 filetype plugin indent on    " required
 syntax on
@@ -77,9 +81,12 @@ map <C-n> :NERDTreeToggle<CR>
 
 if has('gui_running')
 	set background=dark
-	colorscheme solarized
-else
 	colorscheme thaumaturge
+	if has("win32")
+		set guifont=Lucida_Console:h8:cDEFAULT
+	endif
+else
+	colorscheme thaumaturge 
 endif
 
 call togglebg#map("<F5>")
