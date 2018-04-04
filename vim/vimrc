@@ -83,7 +83,7 @@ if has('gui_running')
 	set background=dark
 	colorscheme thaumaturge
 	if has("win32")
-		set guifont=Lucida_Console:h8:cDEFAULT
+		set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cDEFAULT
 	endif
 else
 	colorscheme thaumaturge 
