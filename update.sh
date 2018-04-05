@@ -52,6 +52,7 @@ else
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
 fi
 
+pip install powerline-status
 
 manage_dotfile ".vimrc" "vim/vimrc"
 manage_dotfile ".bashrc" "bashrc"

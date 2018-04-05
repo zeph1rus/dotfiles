@@ -18,7 +18,6 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'rakr/vim-one'
 Plugin 'Zabanaa/neuromancer.vim'
 Plugin 'gkjgh/cobalt'
@@ -101,4 +100,8 @@ if &term == "screen-256color"
      autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
      autocmd VimLeave * call system("tmux rename-window bash")
 endif
+
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
