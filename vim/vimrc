@@ -101,7 +101,16 @@ if &term == "screen-256color"
      autocmd VimLeave * call system("tmux rename-window bash")
 endif
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+if has('python')
+	python from powerline.vim import setup as powerline_setup
+	python powerline_setup()
+	python del powerline_setup
+else
+	if has('python3')
+		python3 from powerline.vim import setup as powerline_setup
+		python3 powerline_setup()
+		python3 del powerline_setup
+	endif
+endif
+
 
