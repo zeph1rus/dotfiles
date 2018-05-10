@@ -78,11 +78,15 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 map <C-n> :NERDTreeToggle<CR>
 
+let s:uname = system("uname")
 if has('gui_running')
 	set background=dark
 	colorscheme thaumaturge
 	if has("win32")
 		set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cDEFAULT
+	endif
+	if s:uname == "Darwin\n"
+		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 	endif
 else
 	colorscheme thaumaturge 
