@@ -9,10 +9,12 @@ if [ -f ~/.bashrc.df ]; then
 	fi
 fi
 
+alias ls='ls --color'
 case "$(uname -s)" in
 	Darwin)
 		#this fixes git completion and status on OSX
 		source /usr/local/etc/bash_completion.d/git-prompt.sh
+		alias ls='ls -G'
 		;;
 esac
 
@@ -57,7 +59,6 @@ PROMPT_COMMAND='set_prompt'
 export LESS="-iMFXR"
 shopt -s checkwinsize
 
-alias ls='ls --color'
 LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
 export LS_COLORS
 
