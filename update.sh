@@ -57,7 +57,7 @@ pip install powerline-status
 manage_dotfile ".vimrc" "vim/vimrc"
 manage_dotfile ".bashrc" "bashrc"
 manage_dotfile ".tmux.conf" "tmux.conf"
-
+manage_dotfile ".flake8" "flake8"
 #updating 
-vim +PluginInstall +qall
+vim +PluginInstall! +qall
 
