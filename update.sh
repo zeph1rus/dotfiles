@@ -65,6 +65,17 @@ else
 	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 fi
 
+if [ -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]; then
+	echo "Powerlevel 9k present, updating"
+	git -C ~/.oh-my-zsh/custom/themes/powerlevel9k pull
+else
+	echo "Powerlevel 9k not present, updating"
+	git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+fi
+
+echo "Setting OMZ directory to 700"
+chmod -R 700 ~/.oh-my-zsh
+
 manage_dotfile ".vimrc" "vim/vimrc"
 manage_dotfile ".bashrc" "bashrc"
 manage_dotfile ".tmux.conf" "tmux.conf"
