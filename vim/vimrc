@@ -12,6 +12,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
+Plugin 'dracula/vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
@@ -88,7 +89,7 @@ if has('gui_running')
 		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 	endif
 else
-	colorscheme thaumaturge 
+	colorscheme dracula 
 endif
 
 call togglebg#map("<F5>")
