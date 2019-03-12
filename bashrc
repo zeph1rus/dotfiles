@@ -55,7 +55,7 @@ set_prompt()
    # Line 4: good old prompt, $ for user, # for root
    PS1+="\[$txtcyan\]\w> \\$ "
 }
-#PROMPT_COMMAND='set_prompt'
+PROMPT_COMMAND='set_prompt'
 export XDG_CONFIG_HOME="/home/jon/.config"
 export LESS="-iMFXR"
 shopt -s checkwinsize
@@ -64,9 +64,5 @@ stty -ixon
 export TERM="xterm-256color"
 LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
 export LS_COLORS
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
 export PATH="$PATH:/usr/local/bin"
 
-. /usr/share/powerline/bindings/bash/powerline.sh   
