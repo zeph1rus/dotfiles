@@ -55,12 +55,12 @@ set_prompt()
    # Line 4: good old prompt, $ for user, # for root
    PS1+="\[$txtcyan\]\w> \\$ "
 }
-PROMPT_COMMAND='set_prompt'
+#PROMPT_COMMAND='set_prompt'
 export XDG_CONFIG_HOME="/home/jon/.config"
 export LESS="-iMFXR"
 shopt -s checkwinsize
 #stop stupid ctrl-s freezes
-stty -ixon
+#stty -ixon
 export TERM="xterm-256color"
 LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
 export LS_COLORS
