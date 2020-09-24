@@ -45,17 +45,6 @@ manage_dotfile () {
 
 }
 
-#check if Vundle is Installed
-if [ -d ~/.vim/bundle/Vundle.vim ]; then
-	echo "Vundle Exists, updating"
-	git -C ~/.vim/bundle/Vundle.vim pull
-else
-	echo "Vundle Doesn't exist, pulling from git"
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
-fi
-
-echo "Installing powerline in default python"
-pip install powerline-status
 
 if [ -d ~/.oh-my-zsh ]; then
 	echo "oh my zsh exists, updating"
@@ -76,11 +65,8 @@ fi
 echo "Setting OMZ directory to 700"
 chmod -R 700 ~/.oh-my-zsh
 
-manage_dotfile ".vimrc" "vim/vimrc"
 manage_dotfile ".bashrc" "bashrc"
 manage_dotfile ".tmux.conf" "tmux.conf"
 manage_dotfile ".flake8" "flake8"
 manage_dotfile ".zshrc" "zshrc"
-#updating 
-vim +PluginInstall! +qall
 
