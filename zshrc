@@ -145,7 +145,7 @@ emsftp() {
 	sftp -i ~/.ssh/id_euromoney jonathan.truran@$1
 }
 
-kill_vscode { 
+kill_vscode() { 
 	ps -aef | grep vscode | awk  '{print $2}' | xargs kill 
 }
 
