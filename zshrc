@@ -132,7 +132,7 @@ POWERLEVEL9K_TIME_FOREGROUND='white'
 
 export PATH=$PATH:/home/jon/bin
 
-source '/home/jon/lib/azure-cli/az.completion'
+#source '/home/jon/lib/azure-cli/az.completion'
 
 # Aliases
 #
