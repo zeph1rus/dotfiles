@@ -2,7 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/jon/.oh-my-zsh"
+case `uname` in
+	  Darwin)
+		  export ZSH="/Users/jon/.oh-my-zsh"
+		  ;;
+	   Linux)
+		   export ZSH="/home/jon/.oh-my-zsh"
+		   ;;
+   esac
 export TERM=xterm-256color
 # Set name of the theme to load --- if set to "random", it will
 export PATH=$PATH:/usr/local/go/bin:~/.local/bin:~/build/pdk/bin/:.
