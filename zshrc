@@ -148,9 +148,21 @@ emsftp() {
 	sftp -i ~/.ssh/id_euromoney jonathan.truran@$1
 }
 
-kill_vscode() { 
-	ps -aef | grep vscode | awk  '{print $2}' | xargs kill 
+kill_vscode() {
+	ps -aef | grep vscode | awk  '{print $2}' | xargs kill
 }
+
+
+klogs() {
+	kubectl logs -n $1 $(kubectl get pods -o name -n $1 | grep $2)
+}
+
+kshell() {
+	 kubectl exec -n $1 $(kubectl get pods -n $1 -o name | grep $2) --stdin --tty -- sh
+}
+
+
+
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
