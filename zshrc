@@ -166,8 +166,9 @@ kshell() {
 	 kubectl exec -n $1 $(kubectl get pods -n $1 -o name | grep $2) --stdin --tty -- sh
 }
 
-
-
+emgit() {
+	git -c core.sshCommand="ssh -i $HOME/.ssh/id_github_em" $@
+}
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -187,3 +188,5 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 # add ssh keys and silence ssh-add
 ls -1 $HOME/.ssh/id* | grep -v ".pub" | xargs -I@  ssh-add @ 2>/dev/null
+
+
