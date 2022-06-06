@@ -1,6 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+# If you come from bash you might have to change your $PATH.  export PATH=$HOME/bin:/usr/local/bin:$PATH 
 # Path to your oh-my-zsh installation.
 case `uname` in
 	  Darwin)
@@ -181,3 +179,11 @@ if [[ -d $HOME/.nvm ]]; then
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
+
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+	  eval `ssh-agent`
+		  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+# add ssh keys and silence ssh-add
+ls -1 $HOME/.ssh/id* | grep -v ".pub" | xargs -I@  ssh-add @ 2>/dev/null
