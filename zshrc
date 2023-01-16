@@ -167,11 +167,9 @@ kshell() {
 }
 
 emgit() {
-	git -c core.sshCommand="ssh -i $HOME/.ssh/id_github_em" $@
+		git -c core.sshCommand="ssh -i $HOME/.ssh/id_github_em" $@
 }
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 bindkey -v
 
@@ -180,13 +178,4 @@ if [[ -d $HOME/.nvm ]]; then
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
-
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-	  eval `ssh-agent`
-		  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-# add ssh keys and silence ssh-add
-ls -1 $HOME/.ssh/id* | grep -v ".pub" | xargs -I@  ssh-add @ 2>/dev/null
-
 
